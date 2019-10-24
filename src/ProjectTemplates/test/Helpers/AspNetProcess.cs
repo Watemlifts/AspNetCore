@@ -237,7 +237,8 @@ namespace Templates.Test.Helpers
 
         public async Task AssertStatusCode(string requestUrl, HttpStatusCode statusCode, string acceptContentType = null)
         {
-            var response = await RequestWithRetries(client => {
+            var response = await RequestWithRetries(client => 
+            {
                 var request = new HttpRequestMessage(
                     HttpMethod.Get,
                     new Uri(ListeningUri, requestUrl));
